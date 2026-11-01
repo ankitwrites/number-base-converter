@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Base Converter | Convert One Base to Another</title>
+    <meta name="description" content="With our Number Base Converter, you can convert a number from one base to another. Just enter the number in any one of the input field, and this program will convert it into number with other rest bases.">
+    <meta name="author" content="AnkPlanet">
+    <link rel="icon" type="image/x-icon" href="../ankplanet-identity/Ankplanet-icon.jpg">
+    <script defer src="js/main.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/header-and-footer.css">
+</head>
+<body>
+    <main>
+        <h1>Number Base Converter</h1>
+        <p>With our Number Base Converter, you can convert a number from one base to another. Just enter the number in any one of the input field, and this program will convert it into number with other rest bases.</p>
+        <form class="inputForm">
+            <div class="textBox">
+                <label for="decInput"></label>
+                <input type="text" name="decInput" id="decInput" autocomplete="off" required>
+                <span>Decimal</span>
+            </div>
+            <br>
+            <div class="textBox">
+                <label for="binInput"></label>
+                <input type="text" name="binInput" id="binInput" autocomplete="off" required>
+                <span>Binary</span>
+            </div>
+            <br>
+            <div class="textBox">
+                <label for="octInput"></label>
+                <input type="text" name="octInput" id="octInput" autocomplete="off" required>
+                <span>Octal</span>
+            </div>
+            <br>
+            <div class="textBox">
+                <label for="hexInput"></label>
+                <input type="text" name="hexInput" id="hexInput" autocomplete="off" required>
+                <span>Hexadecimal</span>
+            </div>
+        </form>
+        <p><b>Instruction:</b> The input field will turn <font color="#f00">RED</font>, if you enter any invalid number. For example, if you enter 2 or 3 into binary input field, then it is an invalid number as binary number system only consists of 0 and 1.</p>
+        <h2>What is Number System and Number Base?</h2>
+        <p>A number system is a mathematical notation of expressing numbers using digits or symbols. The number of unique digits or symbols used in the notation of a number system is its base. There are four major number system. They are;</p>
+        <ol>
+            <li>
+                Decimal Number System:  This number system has base 10 consisting digits from 0 to 9.
+            </li>
+            <li>
+                Binary Number System: This number system has base 2 consisting digits 0 and 1.
+            </li>
+            <li>
+                Octal Number System: This number system has base 8 consisting digits from 0 to 7.
+            </li>
+            <li>
+                Hexadecimal Number System: This number system has base 16 consisting digits from 0 to 9 and alphabets from A to F where (A to F) represents numbers from (10 to 15) respectively.
+            </li>
+        </ol>
+        <h2>Base Conversions</h2>
+        <h3>Conversion of Decimal into Other Bases</h3>
+        <p>To convert decimal number into any other number system, divide the decimal number by the base of the desired number system. The remainders during each division taken in reverse order gives the required result.</p> 
+        <p>When converting from decimal to hexadecimal, if a remainder is a number from 10 to 15, replace it with the respective alphabet (A to F).</p>
+        <div class="image">
+            <img src="images/decimal-to-other-bases.png" alt="Conversion of Decimal Number System into Binary, Octal and Hexadecimal Number System" loading="lazy">
+        </div>
+        <h3>Conversion of Other Bases into Decimal</h3>
+        <p>To convert any other number into decimal, multiply each digits or symbols of the given number by its base. The power of the base is increased by 1 from 0 while going from right to left.</p>
+        <p>Also, when converting from hexadecimal to decimal, replace the alphabets (A to F) with their respective numbers (10 to 15).</p>
+        <div class="image">
+            <img src="images/other-bases-to-decimal.png" alt="Conversion of Binary, Octal and Headecimal Number System into Decimal Number System" loading="lazy">
+        </div>
+        <h3>Conversion of Binary into Octal or Hexadecimal</h3>
+        <p>To perfrom this conversion, we can simply convert the given binary number into decimal and then, by using the above methods, we can convert that obtained decimal into respective octal or hexadecimal.</p>
+        <p>There is also another short method to do this conversion. At first, form a table. For the conversion from binary to octal, make three columns; 4, 2 and 1. Similarly, for hexadecimal, make four columns; 8, 4, 2 and 1. Now, simply fill the binary number into the table by grouping the digits into 3-bit (for octal) or 4-bit (for hexadecimal). At last, add those numbers (8, 4, 2 or 1) which have 1 (binary) in them.</p>
+        <div class="image">
+            <img src="images/binary-to-octal-and-hexadecimal.png" alt="Conersion of Binary Number System into Octal and Hexadecimal Number System and Vice Versa by Forming a Table" loading="lazy">
+        </div>
+        <h3>Conversion of Octal or Hexadecimal into Binary</h3>
+        <p>We can perform this conversion simply by converting the octal or hexadecimal to decimal and then converting the obtained decimal to binary.</p>
+        <p>We can also form the table as mentioned above. For octal, the columns are 4, 2 and 1 and for hexadecimal, they are 8, 4, 2 and 1. Now, put 1 in those places which add up to give each digit of the respective octal or hexadecimal number. Fill the rest of the places by 0s. Combining them gives the binary number. Basically, this method is the converse of what we did above during the convrsion of binary into octal or hexadecimal.</p>
+        <h3>Conversion of Octal into Hexadecimal or Vice Versa</h3>
+        <p>This can be done by first converting the given octal or hexadecimal number into decimal and then converting the decimal into the respective octal or hexadecimal.</p>
+        <p>Similarly, we can also do this conversion by forming the table as mentioned above. At first, convert the octal or hexadecimal number into binary by forming the table. And then, again form another table to convert the obtained binary into desired octal or hexadecimal.</p>
+    </main>
+    <script>
+        hamburger = document.querySelector(".hamburger");
+        hamburger.onclick = function () {
+            navBar = document.querySelector(".navBar");
+            navBar.classList.toggle("active");
+        }
+    </script>
+</body>
+</html>
